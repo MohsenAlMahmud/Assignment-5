@@ -45,7 +45,8 @@
         <section class="w-9/12">
             <h3 class="text-4xl font-semibold mb-8">Kitchenware</h3>            
             <div class="grid grid-cols-3">
-                <div id="card-1" class="card w-80 bg-base-200">
+                <!-- Card-1 -->
+                <div id="card-1" onclick="addCard1()" class="card w-80 bg-base-200">
                     <figure class="px-10 pt-10">
                         <img src="/images/prod1.png" alt="Product" class="rounded-xl" />
                     </figure>
@@ -57,12 +58,13 @@
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                         </div>
-                        <h2 class="card-title text-lg font-semibold">K. Accessories</h2>
-                        <p class="text-lg font-normal">39.00 TK</p>
+                        <h2 id="card-1-name" class="card-title text-lg font-semibold">Spoon Sets</h2>
+                        <p class="text-lg font-normal"> <span id="card-1-price">39.00</span> TK</p>
     
                     </div>
                 </div>
-                <div class="card w-80 bg-base-200">
+                <!-- Card-2 -->
+                <div id="card-2" onclick="addCard2()" class="card w-80 bg-base-200">
                     <figure class="px-10 pt-10">
                         <img src="/images/prod2.png" alt="Product" class="rounded-xl" />
                     </figure>
@@ -74,7 +76,7 @@
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                         </div>
-                        <h2 class="card-title text-lg font-semibold">K. Accessories</h2>
+                        <h2 id="card-2-name" class="card-title text-lg font-semibold">Tray Sets</h2>
                         <p class="text-lg font-normal">25.00 TK</p>
     
                     </div>
@@ -216,9 +218,10 @@
                 <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
                 <button class="btn btn-secondary">Apply</button>
             </div>
-            <h3>Total Price :</h3>
-            <h3>Discount :</h3>
-            <h3>Total :</h3>
+            <div id="added-product"></div>
+            <h3>Total Price : <span id="total-price"></span></h3>
+            <h3>Discount : <span id="discount-amount"></span></h3>
+            <h3>Total : <span id="grand-total"></span></h3>
             <button class="btn btn-secondary">Make Purchase</button>
         </section>
     </main>
