@@ -314,8 +314,62 @@ function applyDiscount() {
         const grandTotal = newBalanceTotal - discountAmount;
         grandTotalField.innerText = grandTotal.toFixed(2);
     } else {
-        couponField.value = '';
         discountBalanceField.innerText = '0.00';
     }
 
 }
+
+function resetAll(){
+    const couponField = document.getElementById('coupon-field');
+    couponField.value = ''; 
+
+    const cartListedItems = document.getElementById('added-product');
+    cartListedItems.innerText = '';
+
+    const previousBalance = document.getElementById('total-price');
+    previousBalance.innerText = '0.00';
+
+    const discountBalanceField = document.getElementById('discount-amount');
+    discountBalanceField.innerText = '0.00';
+
+    const grandTotalField = document.getElementById('grand-total');
+    grandTotalField.innerText = '0.00';
+
+    const purchaseButton = document.getElementById('btn-purchase');
+    purchaseButton.disabled = true;
+
+    const couponButton = document.getElementById('btn-coupon');
+    couponButton.disabled = true;
+}
+
+// function resetAll() {
+   
+//     const cartListedItems = document.getElementById('added-product');
+//     cartListedItems.innerHTML = '';
+
+    
+//     const previousBalance = document.getElementById('total-price');
+//     previousBalance.innerText = '0.00';
+
+    
+//     const purchaseButton = document.getElementById('btn-purchase');
+//     purchaseButton.disabled = true;
+
+//     const couponButton = document.getElementById('btn-coupon');
+//     couponButton.disabled = true;
+
+    
+//     const discountBalanceField = document.getElementById('discount-amount');
+//     discountBalanceField.innerText = '0.00';
+
+//     const grandTotalField = document.getElementById('grand-total');
+//     grandTotalField.innerText = '0.00';
+
+//     const couponField = document.getElementById('coupon-field');
+//     couponField.value = '';
+// }
+
+// Call the resetAll function when the page loads
+window.onload = resetAll;
+
+// window.onload = resetCouponField;

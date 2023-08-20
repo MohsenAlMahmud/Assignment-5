@@ -8,8 +8,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment-5</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+
+    <!-- Tailwind and DaisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Style for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;500;600;700;800;900&display=swap"
@@ -17,7 +32,6 @@
     <style>
         body {
             font-family: 'Work Sans', sans-serif;
-            ;
         }
     </style>
 
@@ -26,27 +40,27 @@
 <body>
     <!-- Header Part -->
     <header>
-        <div class="hero min-h-screen bg-orange-100">
+        <div class="hero m-auto bg-orange-100">
             <div class="hero-content flex-col lg:flex-row-reverse">
-                <div class="w-1/2">
+                <div class="sm:w-auto lg:w-1/2">
                     <img src="/images/Summer 1.png" class=" rounded-lg " />
                 </div>
-                <div class="w-1/2 text-center">
+                <div class="sm:w-auto lg:w-1/2 text-center">
                     <h3 class="text-3xl font-medium mb-12">---SALE FEVER---</h3>
-                    <h1 class="text-5xl font-bold">Purchase TK 200 or above & get <span>20% off</span></h1>
-                    <span>Use Promo Code</span><button class="btn btn-primary">SELL200</button>
+                    <h1 class="text-6xl font-bold mb-16">Purchase TK 200 or above & get <span class="text-[#E527B2]">20% off</span></h1>
+                    <span class="text-2xl font-medium mr-4">Use Promo Code</span><button class="btn btn-secondary text-2xl font-semibold">SELL200</button>
                 </div>
             </div>
         </div>
     </header>
     <!-- Main Part -->
-    <main class="flex w-9/12 m-auto mt-28">
+    <main class="sm:flex-row lg:flex w-9/12 m-auto mt-28">
         <!-- Card Section -->
-        <section class="w-9/12">
+        <section class="lg:w-9/12">
             <h3 class="text-4xl font-semibold mb-8">Kitchenware</h3>
-            <div class="grid grid-cols-3">
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <!-- Card-1 -->
-                <div id="card-1" onclick="addCard1()" class="card w-80 bg-base-200">
+                <div id="card-1" onclick="addCard1()" class="card bg-base-200 mb-4 gap-4">
                     <figure class="px-10 pt-10">
                         <img src="/images/prod1.png" alt="Product" class="rounded-xl" />
                     </figure>
@@ -57,14 +71,14 @@
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-                        </div>
+                          </div>
                         <h2 id="card-1-name" class="card-title text-lg font-semibold">Spoon Sets</h2>
                         <p class="text-lg font-normal"> <span id="card-1-price">39.00</span> TK</p>
 
                     </div>
                 </div>
                 <!-- Card-2 -->
-                <div id="card-2" onclick="addCard2()" class="card w-80 bg-base-200">
+                <div id="card-2" onclick="addCard2()" class="card  bg-base-200 mb-4">
                     <figure class="px-10 pt-10">
                         <img src="/images/prod2.png" alt="Product" class="rounded-xl" />
                     </figure>
@@ -76,13 +90,13 @@
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                         </div>
-                        <h2 id="card-2-name" class="card-title text-lg font-semibold">Tray Sets</h2>
+                        <h2 id="card-2-name" class="card-title text-lg font-semibold">Cutting Boards</h2>
                         <p class="text-lg font-normal"><span id="card-2-price">25.00</span> TK</p>
 
                     </div>
                 </div>
                 <!-- Card-3 -->
-                <div id="card-3" onclick="addCard3()" class="card w-80 bg-base-200">
+                <div id="card-3" onclick="addCard3()" class="card  bg-base-200 mb-4">
                     <figure class="px-10 pt-10">
                         <img src="/images/prod3.png" alt="Product" class="rounded-xl" />
                     </figure>
@@ -102,9 +116,9 @@
             </div>
 
             <h3 class="text-4xl font-semibold mt-14 mb-8">Sportswear</h3>
-            <div class="grid grid-cols-3">
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <!-- Card-4 -->
-                <div id="card-4" onclick="addCard4()" class="card w-80 bg-base-200">
+                <div id="card-4" onclick="addCard4()" class="card bg-base-200 mb-4">
                     <figure class="px-10 pt-10">
                         <img src="/images/prod4.png" alt="Product" class="rounded-xl" />
                     </figure>
@@ -122,7 +136,7 @@
                     </div>
                 </div>
                 <!-- Card-5 -->
-                <div id="card-5" onclick="addCard5()" class="card w-80 bg-base-200">
+                <div id="card-5" onclick="addCard5()" class="card bg-base-200 mb-4">
                     <figure class="px-10 pt-10">
                         <img src="/images/prod5.png" alt="Product" class="rounded-xl" />
                     </figure>
@@ -140,7 +154,7 @@
                     </div>
                 </div>
                 <!-- Card-6 -->
-                <div id="card-6" onclick="addCard6()" class="card w-80 bg-base-200">
+                <div id="card-6" onclick="addCard6()" class="card bg-base-200 mb-4">
                     <figure class="px-10 pt-10">
                         <img src="/images/prod6.png" alt="Product" class="rounded-xl" />
                     </figure>
@@ -160,9 +174,9 @@
             </div>
 
             <h3 class="text-4xl font-semibold mt-14 mb-8">Furniture</h3>
-            <div class="grid grid-cols-3">
-                <!-- Card-7 -->
-                <div id="card-7" onclick="addCard7()" class="card w-80 bg-base-200">
+            <!-- Card-7 -->
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div id="card-7" onclick="addCard7()" class="card bg-base-200 mb-4">
                     <figure class="px-10 pt-10">
                         <img src="/images/prod7.png" alt="Product" class="rounded-xl" />
                     </figure>
@@ -180,7 +194,7 @@
                     </div>
                 </div>
                 <!-- Card-8 -->
-                <div id="card-8" onclick="addCard8()" class="card w-80 bg-base-200">
+                <div id="card-8" onclick="addCard8()" class="card bg-base-200 mb-4">
                     <figure class="px-10 pt-10">
                         <img src="/images/prod8.png" alt="Product" class="rounded-xl" />
                     </figure>
@@ -198,7 +212,7 @@
                     </div>
                 </div>
                 <!-- Card-9 -->
-                <div id="card-9" onclick="addCard9()" class="card w-80 bg-base-200">
+                <div id="card-9" onclick="addCard9()" class="card bg-base-200 mb-4">
                     <figure class="px-10 pt-10">
                         <img src="/images/prod9.png" alt="Product" class="rounded-xl" />
                     </figure>
@@ -219,7 +233,7 @@
 
         </section>
         <!-- Cart Section -->
-        <section class="w-3/12 text-2xl ml-12 mt-4">
+        <section class="sm:w-auto lg:w-3/12 text-2xl lg:ml-12 mt-4">
             <h3 class="mt-32 mb-4">Have coupon?</h3>
             <div class="flex mb-12">
                 <input id="coupon-field" type="text" placeholder="Type here"
@@ -232,7 +246,7 @@
             <h3 class="mb-4 mt-4">Discount : <span id="discount-amount">0</span></h3>
 
             <h3 class="mb-4">Total : <span id="grand-total">0</span></h3>
-            <button id="btn-purchase" onclick="my_modal_5.showModal()" disabled class="btn btn-secondary ">Make
+            <button id="btn-purchase" onclick="my_modal_5.showModal()" disabled class="btn btn-secondary mb-8">Make
                 Purchase</button>
             <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
                 <form method="dialog" class="modal-box">
